@@ -4,7 +4,7 @@ btn.addEventListener("click", (event) => {
     let weight = document.querySelector('#weight').value;
     let height = document.querySelector('#height').value;
 
-    if (height == "" && weight == "") {
+    if (height == "" || weight == "") {
         swal("All Fields are mandatory to fill!", "", "warning");
         return false
     }else if(height.toString().length>=4 || weight.toString().length>=4){
