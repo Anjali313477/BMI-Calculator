@@ -16,13 +16,13 @@ btn.addEventListener("click", (event) => {
     let BMI = (weight / Math.pow(height, 2));
     document.querySelector('#result').innerHTML = `Your BMI = ${parseInt(BMI)}`;
 
-    if (BMI < 18) {
+    if (BMI < 18.5) {
         document.querySelector("#classification").innerHTML = "UNDERWEIGHT"
-    } else if (BMI > 18 && BMI <= 24) {
-        document.querySelector("#classification").innerHTML = " NORMALWEIGHT"
-    } else if (BMI > 25 && BMI <= 29) {
-        document.querySelector("#classification").innerHTML = " OVERWEIGHT"
-    } else if (BMI > 30) {
+    } else if (BMI >=18.5 && BMI <= 24.9) {
+        document.querySelector("#classification").innerHTML = "NORMALWEIGHT"
+    } else if (BMI >=25 && BMI <= 29.9) {
+        document.querySelector("#classification").innerHTML = "OVERWEIGHT"
+    } else if (BMI >=30) {
         document.querySelector("#classification").innerHTML = "OBESE"
     }
 })
