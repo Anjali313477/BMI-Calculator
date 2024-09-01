@@ -3,7 +3,7 @@ btn.addEventListener("click", (event) => {
     event.preventDefault();
     let weight = document.querySelector('#weight').value;
     let height = document.querySelector('#height').value;
-
+    
     if (height == "" || weight == "") {
         swal("All Fields are mandatory to fill!", "", "warning");
         return false
@@ -14,13 +14,14 @@ btn.addEventListener("click", (event) => {
 
     height = height / 100;
     let BMI = (weight / Math.pow(height, 2));
-    document.querySelector('#result').innerHTML = `Your BMI = ${parseInt(BMI)}`;
+    BMI=parseInt(BMI);
+    document.querySelector('#result').innerHTML='BMI = '+BMI;
 
-    if (BMI < 18.5) {
+    if (BMI < 18) {
         document.querySelector("#classification").innerHTML = "UNDERWEIGHT"
-    } else if (BMI >=18.5 && BMI <= 24.9) {
+    } else if (BMI >=18 && BMI <= 24) {
         document.querySelector("#classification").innerHTML = "NORMALWEIGHT"
-    } else if (BMI >=25 && BMI <= 29.9) {
+    } else if (BMI >=25 && BMI <= 29) {
         document.querySelector("#classification").innerHTML = "OVERWEIGHT"
     } else if (BMI >=30) {
         document.querySelector("#classification").innerHTML = "OBESE"
